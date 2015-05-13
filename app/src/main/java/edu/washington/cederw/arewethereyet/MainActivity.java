@@ -45,8 +45,8 @@ public class MainActivity extends ActionBarActivity {
                     if(control.getText().equals("Start")){
                         control.setText("Stop");
                         Long time = Long.decode(((EditText)findViewById(R.id.editText3)).getText().toString());
-                        if(time <0){
-                            throw new IllegalArgumentException("Negative number entered");
+                        if(time <=0){
+                            throw new IllegalArgumentException("Negative number or 0 entered");
                         }
                         Intent intent = new Intent(instance, MyReceiver.class);
                         intent.putExtra("msg",((EditText)findViewById(R.id.editText)).getText().toString());
